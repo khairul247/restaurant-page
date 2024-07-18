@@ -1,13 +1,12 @@
-export function loadHome() {
+export default function loadHomePage() {
     const content = document.getElementById('content');
-    content.innerHTML = '';
-    
-    const heading = document.createElement('h1');
-    heading.textContent = 'Welcome to Our Restaurant';
-    
-    const paragraph = document.createElement('p');
-    paragraph.textContent = 'Enjoy our delicious food in a cozy atmosphere!';
-    
-    content.appendChild(heading);
-    content.appendChild(paragraph);
+    content.innerHTML = ''; // Clear any existing content
+
+    const headline = document.createElement('h1');
+    headline.textContent = "ยินดีต้อนรับ";
+    content.appendChild(headline);
+
+    const description = document.createElement('p');
+    description.textContent = "Experience the best food and drinks in town.";
+    content.appendChild(description);
 }

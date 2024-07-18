@@ -1,18 +1,14 @@
 console.log('Webpack is working!');
 
-import { loadHome } from './home';
+import loadHomePage from './home';
+import './style.css';
 
-function initializeWebsite() {
-    loadHome(); // Load home page by default
-    
-    const homeButton = document.getElementById('home');
-    const menuButton = document.getElementById('menu');
-    const aboutButton = document.getElementById('about');
-    
-    homeButton.addEventListener('click', loadHome);
-    menuButton.addEventListener('click', loadMenu);
-    aboutButton.addEventListener('click', loadAbout);
-}
+document.addEventListener('DOMContentLoaded', () => {
+    loadHomePage();
 
-initializeWebsite();
-
+    document.getElementById('home').addEventListener('click', loadHomePage);
+    document.getElementById('menu').addEventListener('click', () => {
+        const content = document.getElementById('content');
+        content.innerHTML = '<h1>Menu</h1><p>Our delicious menu will be listed here.</p>';
+    });
+});
